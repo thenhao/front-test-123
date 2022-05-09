@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    defaults:
+    #defaults:
         #run:
             #working-directory: 'orderapp'
     env:
