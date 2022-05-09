@@ -10,8 +10,8 @@ on:
 jobs:
   build:
     defaults:
-        run:
-            working-directory: 'orderapp'
+        #run:
+            #working-directory: 'orderapp'
     env:
       CI: false
     
@@ -29,9 +29,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: '**/package-lock.json'
+        #cache-dependency-path: '**/package-lock.json'
     - name: run npm commands
-      working-directory: 'orderapp'
+      #working-directory: 'orderapp'
       run: npm ci
            npm install
            #npm run build --if-present
@@ -48,6 +48,6 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "ambrosial-app" #Must be unique in Heroku
+          heroku_app_name: "front-test-123" #Must be unique in Heroku
           heroku_email: "thlong28@gmail.com"
           branch: "main"
